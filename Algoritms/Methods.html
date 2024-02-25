@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Algorithms2</title>
+</head>
+<style>
+  	body {
+		background-image: url("/Algoritms/img/saad-ahmad-BQLw0OrA6F4-unsplash.jpg");
+		background-size: cover;
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		color: rgb(0, 0, 0);
+		box-sizing: border-box;
+		overflow-x: hidden;
+	}
+
+	.top-menu {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #222;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+
+	.top-menu li {
+		float: left;
+		position: relative;
+	}
+
+	.top-menu li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 16px 18px;
+		text-decoration: none;
+		font-size: 16px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: bold;
+		transition: all 0.3s ease;
+	}
+
+	.top-menu li a:hover {
+		background-color: #444;
+	}
+
+	.top-menu li a:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(255,255,255,0.1);
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	.top-menu li a:hover:before {
+		opacity: 1;
+	}
+
+	.top-menu li.active a {
+		background-color: #e67e22;
+	}
+
+	.top-menu li.active a:before {
+		background-color: rgba(255,255,255,0.2);
+		opacity: 1;
+	}
+
+	.paper-sheet {
+		background-color: #f7f7f7;
+		padding: 40px;
+		margin: 40px auto;
+		max-width: 800px;
+		box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+		border-radius: 10px;
+	}
+
+	.paper-sheet h1 {
+		font-size: 36px;
+		margin-bottom: 20px;
+	}
+
+	.paper-sheet {
+		background-color: #f7f7f7;
+		padding: 40px;
+		margin: 40px auto;
+		max-width: 800px;
+		box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+		border-radius: 10px;
+		position: relative;
+	}
+
+	.paper-sheet:before {
+		content: "";
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		width: 0;
+		height: 0;
+		border-top: 30px solid #fff;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+		z-index: 1;
+	}
+
+	.paper-sheet:after {
+		content: "2";
+		position: absolute;
+		bottom: -30px;
+		right: -30px;
+		width: 10;
+		height: 0;
+		border-bottom: 30px solid #fff;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+		z-index: 1;
+	}
+
+	.paper-sheet:after {
+		box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+	}
+
+	.paper-sheet h1 {
+		font-size: 36px;
+		margin-bottom: 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	.paper-sheet p {
+		font-size: 18px;
+		line-height: 1.6;
+		color: #444;
+		position: relative;
+		z-index: 2;
+	}
+</style>
+
+<body>
+	<header>
+		<nav>
+			<ul class="top-menu">
+				<li><a href="Home.html">головна</a></li>
+				<li><a href="Methods.html">способи</a></li>
+				<li><a href="structures.html">структури</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="paper-sheet">
+			<h1>Способів запису алгоритмів</h1>
+			<p>Існує декілька методів запису алгоритмів, які можна розділити на дві категорії: текстові та графічні.</p>
+			<p><b>Текстові способи запису алгоритмів:</b></p>
+			<p><b>Псевдокод:</b> — псевдокод — це високорівневий опис алгоритму, який використовує суміш природної мови та конструкцій мови програмування. Це покроковий опис алгоритму, який призначений для читання людьми, а також нагадує мову програмування.</p>
+			<p><b>Блок-схеми:</b> —  блок-схеми – це візуальне представлення алгоритму, який використовує фігури та стрілки для зображення послідовності кроків. Кожна фігура представляє окремий крок в алгоритмі, а стрілки показують потік керування між кроками.</p>
+			<p><b>Мови програмування:</b> — Алгоритми також можна записувати безпосередньо на мові програмування за допомогою коду, який може виконувати комп’ютер. Цей метод зазвичай використовують програмісти, які реалізують алгоритм на певній мові програмування.</p>
+			<p><b>Графічні методи запису алгоритмів:</b></p>
+            <p><b>Діаграми Нассі-Шнейдермана:</b> діаграми Нассі-Шнейдермана — це тип блок-схеми, спеціально розробленої для структурованого програмування. Вони використовують прямокутники для представлення тверджень і стрілки, щоб показати потік керування між ними.</p>
+            <p><b>Діаграми UML:</b> UML (Unified Modeling Language) — це графічна мова, яка використовується для моделювання систем програмного забезпечення. Він включає ряд різних типів діаграм, включаючи діаграми діяльності, які можна використовувати для представлення алгоритмів.</p>
+            <p><b>Діаграми переходів між станами:</b> діаграми переходів між станами — це тип графічного представлення, який використовується для моделювання поведінки систем, які змінюють стан з часом. Вони часто використовуються в поєднанні з алгоритмами, які включають зміни стану.</p>
+            <p><b>Діаграми потоків даних:</b> діаграми потоків даних — це тип графічного представлення, яке показує, як дані переміщуються системою. Їх можна використовувати для моделювання алгоритмів, які включають перетворення даних.</p>
+            <p>Кожен метод запису алгоритмів має свої сильні та слабкі сторони, і вибір методу залежатиме від конкретних потреб розробника чи користувача. Текстовим методам часто віддають перевагу через їхню гнучкість і простоту використання, тоді як графічним методам часто віддають перевагу через їх візуальну привабливість і здатність швидко й легко передавати складну інформацію. Зрештою, найважливішим фактором у виборі методу запису алгоритмів є вибір того, який найкраще підтримує розробку та реалізацію даного алгоритму.</p>
+		</div>
+	</main>
+
+</body>
+</html>

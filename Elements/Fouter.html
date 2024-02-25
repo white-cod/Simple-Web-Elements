@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Fouter</title>
+
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #1e5372;
+            align-items: center;
+            position: relative;
+        }
+
+        hr {
+            width: 100%;
+            border: none;
+            border-top: 1px solid rgb(255, 255, 255);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .footer-column {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .footer-column h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 5px;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: 200;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons img {
+            width: 48px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .social-icons img:hover {
+            content: url("/step/image/youtube.png");
+        }
+
+        .social-icons img:hover:nth-child(2) {
+            content: url("/step/image/insta.png");
+        }
+
+        .social-icons img:hover:nth-child(3) {
+            content: url("/step/image/fb.png");
+        }
+
+        .copyright {
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Privacy & Cookies</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <img src="/step/image/youtube_gray.png" alt="YouTube Icon">
+                <img src="/step/image/insta_gray.png" alt="Insta Icon">
+                <img src="/step/image/fb_gray.png" alt="FB Icon">
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            Copyright © Company 2018-2019
+        </div>
+    </footer>
+
+</body>
+
+</html>

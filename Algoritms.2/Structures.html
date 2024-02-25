@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Structures</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style>
+		.video-bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -1;
+			background-size: cover;
+		}
+		.white-bg {
+			background-color: #fff;
+			padding: 20px;
+		}
+		.video-white-bg {
+			background-color: #f0ebeb;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.blue-bg {
+			background-color: #007bff;
+			color: #fff;
+			padding: 20px;
+		}
+		.yellow-bg {
+			background-color: #ffd166;
+			color: #000;
+			padding: 20px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<video autoplay loop muted class="video-bg">
+		<source src="/Algoritms.2/img/pexels-berkan-dörtkardeş-5588687-4096x2160-50fps.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="Home.html">Info Site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav"> 
+            <li class="nav-item">
+                <a class="nav-link" href="Basics.html">Basics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Methods.html">Methods</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Structures.html">Structures</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 white-bg">
+				<h2>Послідовні алгоритми</h2>
+				<p>Це алгоритми, які виконують серію кроків у певному порядку. Такі алгоритми зазвичай починаються з введення даних, виконують деякі обчислення або операції, а потім виводять результат. Кроки в послідовному алгоритмі, як правило, прості і зрозумілі, а сам алгоритм можна легко зрозуміти і реалізувати. </p>
+			</div>
+			<div class="col-md-4 video-white-bg">
+				<video width="100%" height="auto" controls>
+					<source src="/Algoritms.2/img/How to Master Algorithms and Data Structures in 4 Months.mp4" type="video/mp4">	
+				</video>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 video-white-bg">
+				<video width="100%" height="auto" controls>
+					<source src="/Algoritms.2/img/How I mastered Data Structures and Algorithms.mp4" type="video/mp4">	
+				</video>
+			</div>
+			<div class="col-md-8 white-bg">
+				<h2>Алгоритми вибору</h2>
+				<p>З іншого боку, використовують умовні оператори, щоб визначити, які кроки потрібно зробити на основі певної умови. Ці алгоритми зазвичай починаються з введення даних, оцінюють їх на відповідність певній умові, а потім виконують різні дії на основі результату оцінки. Алгоритми вибору зазвичай використовуються в процесах прийняття рішень, де результат конкретного рішення залежить від вхідних даних. </p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 blue-bg">
+				<h2>Ітераційні алгоритми</h2>
+				<p>Це алгоритми, які повторюють набір кроків доти, доки не буде виконано певну умову. Ці алгоритми зазвичай починаються з введення вхідних даних, виконують набір обчислень або операцій, оцінюють умову, а потім повторюють процес, доки умова не буде виконана. Ітераційні алгоритми зазвичай використовуються в ситуаціях, коли певне завдання потрібно виконати кілька разів або коли вхідні дані занадто великі, щоб обробити їх за один раз.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 yellow-bg">
+				<h2>Прості алгоритми</h2>
+				<p>На додаток до цих структур, алгоритми також можна класифікувати на основі їхньої складності. Прості алгоритми, такі як послідовні алгоритми, як правило, легкі для розуміння і реалізації, але можуть не підходити для складних завдань або великих наборів даних. Складні алгоритми, наприклад, ті, що використовують рекурсію або розширені структури даних, можуть бути складнішими для розуміння і реалізації, але часто є більш ефективними і результативними для вирішення складних проблем. </p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

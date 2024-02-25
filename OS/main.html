@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>os Site</title>
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80");
+		background-size: cover;
+		box-sizing: border-box;
+		overflow-x: hidden;
+        
+	}
+
+    .paper {
+        background-color: white;
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 50px;
+        box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+        text-align: left;
+    }
+
+
+    .menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+    }
+      
+    .content {
+        margin-left: 200px;
+        padding: 20px;
+        text-align: left;
+    }
+      
+    img {
+        float: right;
+        margin: 0 0 20px 20px;
+        width: 200px;
+        height: 200px;
+    }
+        
+    p {
+        text-align: justify;
+    }
+
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .content h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .content p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .content img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .content img:first-child {
+        margin-top: 0;
+    }
+
+    .content img:last-child {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+    .menu {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    .menu ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .menu li {
+        margin: 0;
+    }
+    
+    .menu a {
+        padding: 0;
+        font-size: 14px;
+    }
+    
+    .content {
+        margin: 0;
+    }
+}
+
+</style>
+  </head>
+  <body>
+    <div class="paper">
+        <div class="menu">
+          <ul>
+            <li><a href="main.html">Головна</a></li>
+            <li><a href="ConsoleOS.html">Консольні ОС</a></li>
+            <li><a href="GraphicOS.html">Графічні ОС</a></li>
+          </ul>
+        </div>
+        <div class="content">
+          <h1>Основні поняття</h1>
+          <p><img src="/OS/img/pngwing.com (6).png" alt="Image 1">Операційна система (ОС) - це програмне забезпечення, яке керує апаратними та програмними ресурсами комп'ютера і надає загальні послуги для комп'ютерних програм. Основні концепції ОС включають управління системними ресурсами, надання користувацького інтерфейсу та полегшення комунікації між програмним забезпеченням та апаратними пристроями.<br><br></p>
+          <p><img src="/OS/img/pngwing.com (7).png" alt="Image 2">Основна мета ОС - забезпечити стабільне та безпечне середовище для виконання програмних додатків. ОС керує апаратними та програмними ресурсами комп'ютера, розподіляючи системні ресурси, такі як процесорний час, пам'ять та пристрої вводу/виводу, між різними програмами та процесами. ОС також надає такі послуги, як управління файлами, підключення до мережі та драйвери пристроїв, які дозволяють програмному забезпеченню взаємодіяти з апаратними пристроями, такими як принтери, клавіатури та дисплеї.<br><br></p>
+          <p><img src="/OS/img/pngwing.com (8).png" alt="Image 3">Ще одне важливе призначення ОС - забезпечити користувацький інтерфейс для взаємодії користувачів з комп'ютерною системою. Інтерфейс користувача може мати різні форми, наприклад, графічний інтерфейс користувача (GUI) або інтерфейс командного рядка (CLI). Інтерфейс користувача дозволяє користувачам запускати програми, керувати файлами та взаємодіяти з операційною системою.<br><br><br></p>
+          <p><img src="/OS/img/pngwing.com (9).png" alt="Image 4">ОС також надає функції безпеки для захисту системи та даних користувача від несанкціонованого доступу. ОС може контролювати доступ до системних ресурсів, таких як файли і каталоги, призначаючи дозволи і привілеї користувачам і групам. ОС також може реалізовувати механізми шифрування та автентифікації, щоб гарантувати безпеку даних користувача.<br><br><br></p>
+          <p><img src="/OS/img/pngwing.com (10).png" alt="Image 5">ОС також відповідає за керування продуктивністю системи та забезпечення її ефективної роботи. ОС може контролювати системні ресурси та розподіляти їх відповідно до системних вимог. Це може включати керування використанням пам'яті, планування завдань та оптимізацію операцій вводу/виводу для підвищення продуктивності.</p>
+        </div>
+      </div>
+</body>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Methods</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style>
+		.video-bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -1;
+			background-size: cover;
+		}
+		.white-bg {
+			background-color: #fff;
+			padding: 20px;
+		}
+		.video-white-bg {
+			background-color: #fff;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+
+	<video autoplay loop muted class="video-bg">
+		<source src="/Algoritms.2/img/pexels-yaroslav-shuraev-4763824-3840x2160-24fps.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="Home.html">Info Site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav"> 
+            <li class="nav-item">
+                <a class="nav-link" href="Basics.html">Basics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Methods.html">Methods</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Structures.html">Structures</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 white-bg">
+				<h2>Метод грубої сили</h2>
+				<p>Одним з найпоширеніших методів алгоритмів є метод грубої сили. Цей підхід передбачає перебір усіх можливих варіантів розв'язання проблеми, поки не буде знайдено правильний. Алгоритми грубої сили, як правило, прості в реалізації і можуть бути використані для широкого кола проблем. Однак вони не дуже ефективні і можуть бути повільними для проблем з великими наборами даних. Наприклад, якщо ви намагаєтеся знайти найкоротший шлях між двома точками в лабіринті, метод грубої сили передбачає перебір усіх можливих шляхів, поки не знайдете найкоротший. Хоча цей метод працює для невеликих лабіринтів, він швидко стає непрактичним для більших лабіринтів.
+                </p>
+			</div>
+			<div class="col-md-4 video-white-bg">
+				<video width="100%" height="auto" controls>
+					<source src="img/Best Books for Learning Data Structures and Algorithms.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 video-white-bg">
+				<video width="100%" height="auto" controls>
+					<source src="img/1. Introduction to Algorithms.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="col-md-8 white-bg">
+				<h2>Розділяй і володарюй</h2>
+				<p>Інший метод алгоритмів - це підхід "розділяй і володарюй". Цей метод передбачає розбиття проблеми на менші підпроблеми, вирішення кожної з них окремо, а потім об'єднання рішень для вирішення початкової проблеми. Алгоритми "розділяй і володарюй" часто є більш ефективними, ніж алгоритми грубої сили, особливо для задач з великими наборами даних. Їх також легше розпаралелити, що робить їх добре придатними для розподілених обчислювальних систем. Наприклад, алгоритм сортування злиттям - це алгоритм "розділяй і володарюй", який сортує список чисел, розбиваючи його на два менші списки, сортуючи кожен з них незалежно, а потім об'єднуючи їх назад у відсортованому порядку. Цей підхід дозволяє ефективно сортувати великі масиви даних і широко використовується в інформатиці та аналізі даних. </p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

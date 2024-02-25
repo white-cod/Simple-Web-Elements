@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<link rel="preconnect" href="https://fontom">
+<link rel="preconnect" href="https://fontcom" crossorigin>
+<link href="https://fonts." rel="stylesheet">
+<head>
+	<meta charset="UTF-8">
+	<title>"Об'єктно орієнтоване програмування"</title>
+	
+	<style>
+
+		*{font-family:'Jura', sans-serif;}
+		
+		body {
+			background-image: url("https://images");
+    		background-repeat: no-repeat;
+    		background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+
+		.topbar {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+		}
+
+		nav a:hover {
+			background-color: #fff;
+			color: #333;
+		}
+
+
+		.main {
+ 			max-width: 1500px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+
+	.footer {
+		background-color: #333;
+		color: #fff;
+		padding: 20px;
+		text-align: center;
+		margin-top: 20%;
+	}
+
+	@keyframes slide-up {
+		from {
+			transform: translateY(-100%);
+		}
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slide-down {
+		from {
+			transform: translateY(100%);
+		}
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slide-right {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	.topbar {
+		animation: slide-up 0.5s ease-in-out;
+	}
+
+	.sidebar {
+		animation: slide-up 0.5s ease-in-out;
+	}
+
+	.footer {
+		animation: slide-down 0.5s ease-in-out;
+	}
+
+	.terminal-style {
+		animation: slide-right 0.5s ease-in-out;
+	}
+
+	.language-select-container {
+  		display: flex;
+  		align-items: center;
+  		margin-right: 20px;
+	}
+
+	#language-select {
+ 		background-color: #333;
+ 		color: #fff;
+ 		border: none;
+ 		padding: 5px 10px;
+		border-radius: 5px;
+  		outline: none;
+  		cursor: pointer;
+  		font-family: 'Jura', sans-serif;
+	}
+
+	#language-select:hover {
+  		background-color: #555;
+	}
+
+	#language-select option {
+  		background-color: #333;
+  		color: #fff;
+	}
+
+	.logo {
+  		height: 40px;
+  		margin-right: 20px;
+	}
+
+	.terminal-style {
+  		background-color: #fff;
+  		color: #000;
+  		font-family: 'Menlo', monospace;
+  		padding: 20px;
+  		border-radius: 20px;
+  		margin-top: 100px;
+		position: relative;
+		font-size: 20px;
+		word-wrap: break-word;
+		max-height: calc(50vh - (-150px + (2 * (20px +10vw))));
+	}
+
+	.terminal-style .terminal-circles {
+  		position: absolute;
+ 		top: 10px;
+  		left: 10px;
+  		display: flex;
+	}
+
+	.terminal-style .terminal-circle {
+ 		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		margin-right: 4px;
+	}
+
+	.terminal-style .terminal-circle.red {
+ 		background-color: #FF5F56;
+	}
+
+	.terminal-style .terminal-circle.yellow {
+		background-color: #FFBD2E;
+	}
+
+	.terminal-style .terminal-circle.green {
+		background-color: #27C93F;
+	}
+
+	.main .text-and-image-container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.main .text-and-image-container img {
+		width: 200px;
+		height: 200px;
+	}
+
+    .learn-oop-desc {
+		width: 70%;
+	}
+</style>
+
+</head>
+<body>
+
+	
+	<header class="topbar">
+		<nav>
+			<ul>
+				<img src="img/Logo2.png" class="logo">
+				<li><a href="main.html">Home</a></li>
+				<li><a href="About.html">About</a></li>
+			</ul>
+			<div class="language-select-container">
+				<label for="language-select" class="sr-only">Select language</label>
+				<select id="language-select">
+					<option value="uk">Українська</option>
+					<option value="en">English</option>
+				</select>
+				<a href="SignIn.html">Sign In</a>
+			</div>
+		</nav>
+	</header>
+	
+	<main class="main terminal-style">
+			<div class="terminal-circles">
+				<div class="terminal-circle red"></div>
+				<div class="terminal-circle yellow"></div>
+				<div class="terminal-circle green"></div>
+		  	</div>
+	<h2 data-lang="learn-oop">Інкапсуляція</h2>
+	<div class="text-and-image-container">
+	</div>
+	</main>
+
+	<footer class="footer">
+		<p>&copy; 2023 My Website</p>
+	</footer>
+
+	<script>
+		const translations = {
+		  en: {
+			"learn-oop": "Encapsulation",
+
+		  },
+		  uk: {
+			"learn-oop": "Інкапсуляція",
+		  },
+		};
+
+		function changeLanguage(lang)
+		{
+	  		const elements = document.querySelectorAll('[data-lang]');
+	  		elements.forEach((element) => {
+				const translationKey = element.getAttribute('data-lang');
+				element.textContent = translations[lang][translationKey];
+	  		});
+		}
+
+		document.getElementById('language-select').addEventListener('change', (event) => {
+		changeLanguage(event.target.value);
+		});
+	</script>
+</body>
+</html>

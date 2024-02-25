@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+.featured {
+     background-color: #f5f5f5;
+     padding: 50px;
+     text-align: center;
+}
+
+.featured h2 {
+     font-size: 36px;
+     margin-bottom: 30px;
+}
+
+.product-container {
+     display:flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+}
+
+.product {
+     width: 30%;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+     border-radius: 10px;
+     padding: 20px;
+     margin-bottom: 30px;
+}
+
+.product img {
+     width: 100%;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 10px;
+     margin-bottom: 20px;
+}
+
+.product h3 {
+     font-size: 24px;
+     margin-bottom: 10px;
+}
+
+.product p {
+     font-size: 18px;
+     margin-bottom: 20px;
+}
+
+.btn {
+     display: inline-block;
+     background-color: #1e90ff;
+     color: #fff;
+     padding: 10px 20px;
+     border-radius: 5px;
+     text-decoration: none;
+     font-size: 16px;
+     transition: background-color 0.3s;
+}
+
+.btn:hover {
+     background-color: #007fff;
+}
+
+.btn-home {
+     background-color: #007bff;
+     color: #fff;
+}
+
+.btn-about {
+     background-color: #ffc107;
+     color: #fff;
+}
+
+.btn-contact {
+     background-color: #28a745;
+     color: #fff;
+}
+
+.btn {
+     display: inline-block;
+     padding: 10px 20px;
+     font-size: 16px;
+     font-weight: bold;
+     text-align: center;
+     text-decoration: none;
+     border-radius: 5px;
+     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn:hover {
+     background-color: #fff;
+     color: #000;
+}
+
+nav {
+   display:flex;
+   justify-content: center;
+   background-color: #f5f5f5;
+   padding: 20px;
+}
+
+nav a {
+   margin: 0 10px;
+}
+
+nav a:hover {
+   background-color: #ddd;
+   color: #333;
+}
+
+.btn {
+   display: inline-block;
+   padding: 10px 20px;
+   font-size: 16px;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 5px;
+   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+   background-color: #1e90ff;
+   color: #fff;
+}
+
+.btn-home {
+   background-color: #007bff;
+}
+
+.btn-about {
+   background-color: #ffc107;
+}
+
+.btn-contact {
+   background-color: #28a745;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.card ul {
+  margin-bottom: 20px;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+.card a.btn {
+  display: block;
+  margin: 20px auto 0;
+  max-width: 200px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.btn-home {
+  background-color: #007bff;
+}
+
+.btn-about {
+  background-color: #ffc107;
+}
+
+.btn-contact {
+  background-color: #28a745;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #1e90ff;
+}
+
+.btn-home:hover {
+  background-color: #1e90ff;
+}
+
+.btn-about:hover {
+  background-color: #ffa500;
+}
+
+.btn-contact:hover {
+  background-color: #32CD32;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  width: 30%;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product:hover {
+  transform: scale(1.03);
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.btn-home {
+  background-color: #007bff;
+}
+
+.btn-about {
+  background-color: #ffc107;
+}
+
+.btn-contact {
+  background-color: #28a745;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #007fff;
+}
+
+.btn-home {
+  background-color: #28a745;
+}
+
+.btn-about {
+  background-color: #007bff;
+}
+
+.btn-contact {
+  background-color: #ffc107;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="main.html" class="btn btn-home">Home</a>
+        <a href="#" class="btn btn-about">About</a>
+        <a href="#" class="btn btn-contact">Contact</a>
+    </nav>
+</header>
+<div class="card">
+  <h3>Javascript</h3>
+  <p>JavaScript — популярна мова програмування високого рівня, яка широко використовується для веб-розробки. Вона була вперше представлена в 1995 році компанією Netscape Communications і з тих пір стала однією з найпоширеніших мов програмування у світі. JavaScript — це динамічна, вільно типізована мова, яка інтерпретується під час виконання та працює практично в кожному сучасному веб-браузері.</p>
+  <p>Однією з ключових особливостей JavaScript є його здатність додавати інтерактивність веб-сторінок. Код JavaScript можна вбудовувати безпосередньо у файли HTML, що дозволяє веб-розробникам створювати динамічний та інтерактивний вміст, який реагує на введення користувача. Наприклад, JavaScript можна використовувати для створення розкривних меню, спливаючих вікон та інших інтерактивних елементів на веб-сторінці.</p>
+  <p>JavaScript також широко використовується для зовнішньої веб-розробки, яка передбачає створення інтерфейсу користувача та візуального дизайну веб-сайту. Він надає багатий набір інструментів і фреймворків, таких як React, Angular і Vue, які дозволяють розробникам створювати складні та інтерактивні інтерфейси користувача.</p>
+  <p>Іншою важливою особливістю JavaScript є його підтримка асинхронного програмування. Це дозволяє розробникам писати код, який може працювати у фоновому режимі, поки виконується інший код, що особливо корисно для веб-додатків, які потребують оновлення та обробки даних у реальному часі.</p>
+  <p>JavaScript також часто використовується для внутрішньої веб-розробки. Це передбачає написання коду, який виконується на веб-сервері та взаємодіє з базою даних або іншими зовнішніми службами. Існує кілька популярних фреймворків для веб-розробки на JavaScript, наприклад Node.js, який дозволяє розробникам писати серверний код за допомогою JavaScript.</p>
+  <p>Окрім веб-розробки, JavaScript також використовується в багатьох інших контекстах, таких як розробка мобільних додатків, розробка настільних додатків і навіть сценарії на стороні сервера. Це універсальна мова, яка добре підходить для широкого спектру завдань програмування.</p>
+  <p>Загалом, JavaScript є потужною та гнучкою мовою програмування, яка революціонізувала спосіб нашої взаємодії з Інтернетом. Його здатність додавати інтерактивність і динамічний вміст до веб-сторінок зробила його критично важливим інструментом для веб-розробників, а його підтримка асинхронного програмування та інших розширених функцій зробила його популярним вибором для широкого спектру завдань програмування.</p>
+</div>
+<div class="card">
+    <h3>JS IDE</h3>
+    <p>Інтегровані середовища розробки (IDE) — це програмні додатки, які забезпечують комплексне середовище для написання та тестування коду. Ось деякі популярні C++ IDE:</p>
+    <ul>
+      <li><a href="https://www.jetbrains.com/webstorm/">WebStorm</a>: потужна IDE, розроблена JetBrains.</li>
+      <li><a href="https://atom.io/">Atom</a>: це безкоштовна IDE із відкритим кодом, розроблена GitHub.</li>
+      <li><a href="https://code.visualstudio.com/">Visual Studio Code</a>: популярний редактор коду загального призначення з чудовою підтримкою JavaScript</li>
+      <li><a href="https://www.sublimetext.com/">Sublime Text</a>: це популярна легка IDE, яка легко налаштовується</li>
+      <li><a href="https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-web-and-javascript-developers">Eclipse</a>: це потужна IDE із відкритим вихідним кодом, яка широко використовується для розробки на Java, але також підтримує розробку на JavaScript.</li>
+    </ul>
+    <p>Вибір правильної IDE залежить від ваших потреб і вподобань. Деякі фактори, які слід враховувати, включають складність ваших проектів, необхідні вам функції та платформу, на якій ви працюєте.</p>
+  </div>
+<div class="featured">
+  <h2>Рекомендовані товари</h2>
+  <div class="product-container">
+    <div class="product">
+      <img src="https://financesonline.com/uploads/2019/08/webstorm-logo1.png" alt="Product 1">
+      <h3>Webstorm</h3>
+      <p>Він спеціально розроблений для веб-розробки та надає широкий спектр функцій, таких як доповнення коду, налагодження та тестування. WebStorm також має вбудовану підтримку популярних інтерфейсних фреймворків, таких як React, Vue та Angular.</p>
+      <a href="https://www.jetbrains.com/webstorm/buy/#commercial" class="btn">Придбати зараз</a>
+    </div>
+    <div class="product">
+      <img src="https://repository-images.githubusercontent.com/552086961/8f8a43e1-cf63-4ab2-8486-c686c7ef67d9" alt="Product 2">
+      <h3>Sublime Text</h3>
+      <p>Він має мінімалістичний інтерфейс і широкий набір функцій, включаючи автозавершення коду, підсвічування синтаксису та кілька варіантів вибору. Sublime Text також має велику й активну спільноту, яка надає багато корисних плагінів і розширень. </p>
+      <a href="https://www.sublimehq.com/store/text" class="btn">Придбати зараз</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
