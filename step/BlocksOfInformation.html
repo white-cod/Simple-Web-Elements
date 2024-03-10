@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expandable Blocks</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block {
+            border: 1px solid #ccc;
+            width: 900px;
+        }
+
+        .block-title {
+            background-color: #f2f2f2;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        .block-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 10px;
+            transition: max-height 0.5s ease;
+        }
+
+        .block.open .block-title {
+            background-color: #e0e0e0;
+        }
+
+        .block.open .block-content {
+            max-height: 500px;
+        }
+    </style>
+
+    <script>
+        function toggleBlock(id) {
+            var block = document.getElementById(id);
+            var isOpen = block.classList.contains("open");
+
+            var blocks = document.getElementsByClassName("block");
+            for (var i = 0; i < blocks.length; i++) {
+                blocks[i].classList.remove("open");
+            }
+
+            if (!isOpen) {
+                block.classList.add("open");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="block" id="block1">
+        <div class="block-title" onclick="toggleBlock('block1')">Block 1</div>
+        <div class="block-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam posuere tincidunt metus suscipit
+                dapibus. Quisque dignissim tincidunt urna. Etiam quis lobortis urna. Nam eu ligula quis ipsum faucibus
+                blandit non eget odio. Mauris id efficitur quam. Proin et mattis est. Pellentesque habitant morbi
+                tristique senectus et netus et malesuada fames ac turpis egestas. Proin semper velit quis nisi iaculis
+                laoreet. Integer sit amet hendrerit lacus. Aenean non sapien vitae sapien elementum tincidunt quis ut
+                metus. Phasellus ultrices dui ac lectus cursus, faucibus iaculis est malesuada. Maecenas et odio ac odio
+                suscipit maximus ac sed mi. Sed ac consequat odio. Ut id ex commodo, ullamcorper nibh sit amet,
+                efficitur erat. Maecenas vestibulum tempus velit at pretium. Vivamus lorem ex, finibus ut congue sit
+                amet, porttitor a odio. Etiam ligula nisl, dapibus eu ante vitae, tempus facilisis nisl. Nulla dictum
+                tempus lectus, congue fermentum tellus congue non.</p>
+        </div>
+    </div>
+
+    <div class="block" id="block2">
+        <div class="block-title" onclick="toggleBlock('block2')">Block 2</div>
+        <div class="block-content">
+            <p>Nam lobortis ultrices augue a commodo. Sed finibus erat nec lorem porta suscipit. Sed at mi est. Fusce
+                eget magna nec urna eleifend sagittis. Maecenas mollis neque eu varius lacinia. Pellentesque habitant
+                morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque at commodo ante, sit
+                amet dapibus quam. Pellentesque fermentum iaculis libero, at bibendum massa efficitur non. Nunc sit amet
+                metus urna. Cras pharetra purus et ex ultrices mollis. Suspendisse lobortis lacinia turpis, quis
+                consectetur ligula consectetur nec. Nunc tempor pellentesque quam eget eleifend. Aliquam sagittis
+                volutpat libero vel lacinia. Proin a vehicula est. Donec eget dictum purus, a elementum tortor.
+                Suspendisse lacinia nisi nec placerat sagittis. Aliquam in ante eu mauris euismod consequat ut eget
+                mauris. Nullam lobortis lacus vitae egestas fermentum. Sed lobortis augue in vestibulum porttitor. Sed
+                rutrum, mi sed mollis aliquam, quam erat vulputate velit, ac dictum justo tellus a dui. Donec quis arcu
+                in mauris vulputate fringilla vitae quis neque. Etiam eget elit commodo nibh facilisis cursus. Nulla
+                vitae gravida velit.</p>
+        </div>
+    </div>
+
+    <div class="block" id="block3">
+        <div class="block-title" onclick="toggleBlock('block3')">Block 3</div>
+        <div class="block-content">
+            <p>Quisque vulputate velit in erat iaculis, et rutrum justo dignissim. Nulla in elementum mauris, eu
+                facilisis lectus. Etiam nisi ipsum, placerat vitae euismod ac, fermentum a ex. Donec vitae porta metus,
+                vitae auctor ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                himenaeos. Praesent eleifend imperdiet mi, ut ornare sem volutpat tristique. Aliquam tristique id purus
+                et porttitor. Integer pellentesque faucibus massa, non placerat tellus faucibus sed. Vestibulum sodales
+                et neque at accumsan. In sed fringilla ligula, vitae dapibus est. Maecenas bibendum augue vitae mollis
+                malesuada. Nunc tempor pellentesque quam eget eleifend. Aliquam sagittis volutpat libero vel lacinia.
+                Proin a vehicula est. Donec eget dictum purus, a elementum tortor. Suspendisse lacinia nisi nec placerat
+                sagittis. Aliquam in ante eu mauris euismod consequat ut eget mauris. Nullam lobortis lacus vitae
+                egestas fermentum. Sed lobortis augue in vestibulum porttitor. Sed rutrum, mi sed mollis aliquam, quam
+                erat vulputate velit, ac dictum justo tellus a dui. Donec quis arcu in mauris vulputate fringilla vitae
+                quis neque. Etiam eget elit commodo nibh facilisis cursus. Nulla vitae gravida velit.</p>
+        </div>
+    </div>
+
+    <div class="block" id="block4">
+        <div class="block-title" onclick="toggleBlock('block4')">Block 4</div>
+        <div class="block-content">
+            <p>Quisque vulputate velit in erat iaculis, et rutrum justo dignissim. Nulla in elementum mauris, eu
+                facilisis lectus. Etiam nisi ipsum, placerat vitae euismod ac, fermentum a ex. Donec vitae porta metus,
+                vitae auctor ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                himenaeos. Praesent eleifend imperdiet mi, ut ornare sem volutpat tristique. Aliquam tristique id purus
+                et porttitor. Integer pellentesque faucibus massa, non placerat tellus faucibus sed. Vestibulum sodales
+                et neque at accumsan. In sed fringilla ligula, vitae dapibus est. Maecenas bibendum augue vitae mollis
+                malesuada. Nunc tempor pellentesque quam eget eleifend. Aliquam sagittis volutpat libero vel lacinia.
+                Proin a vehicula est. Donec eget dictum purus, a elementum tortor. Suspendisse lacinia nisi nec placerat
+                sagittis. Aliquam in ante eu mauris euismod consequat ut eget mauris. Nullam lobortis lacus vitae
+                egestas fermentum. Sed lobortis augue in vestibulum porttitor. Sed rutrum, mi sed mollis aliquam, quam
+                erat vulputate velit, ac dictum justo tellus a dui. Donec quis arcu in mauris vulputate fringilla vitae
+                quis neque. Etiam eget elit commodo nibh facilisis cursus. Nulla vitae gravida velit.</p>
+        </div>
+    </div>
+</body>
+
+</html>

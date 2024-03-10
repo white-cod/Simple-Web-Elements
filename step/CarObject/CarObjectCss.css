@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#carInfo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#carInfo h2 {
+    margin-top: 0;
+}
+
+#carInfo p {
+    margin: 5px 0;
+}

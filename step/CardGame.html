@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card Game</title>
+</head>
+<style>
+    .row{
+        width: 400px;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .card{
+        width: 100%;
+        display: flex;
+        padding: 3px 7px;
+        font-family: sans-serif;
+        font-size: 32px;
+        align-items: center;
+        background-color: #e1e1e1;
+    }
+    .space{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .black{
+        color: black;
+    }
+    .red{
+        color: darkred;
+    }
+</style>
+<body>
+    <div class="playerFirst space">
+        <div class="space"><span>Player 1:</span></div>
+        <div class="row">
+            <div class="card black">
+                <span>2</span>
+                <span>&#9827</span>
+            </div>
+            <div class="card red">
+                <span>9</span>
+                <span>&#9829</span>
+            </div>
+            <div class="card red">
+                <span>6</span>
+                <span>&#9829</span>
+            </div>
+            <div class="card red">
+                <span>A</span>
+                <span>&#9830</span>
+            </div>
+            <div class="card black">
+                <span>Q</span>
+                <span>&#9824</span>
+            </div>
+            <div class="card black">
+                <span>J</span>
+                <span>&#9827</span>
+            </div>
+        </div>
+    </div>
+    <div class="playerSecond">
+        <div class="space"><span>Player 2:</span></div>
+        <div class="row">
+            <div class="card red">
+                <span>3</span>
+                <span>&#9829</span>
+            </div>
+            <div class="card black">
+                <span>A</span>
+                <span>&#9827</span>
+            </div>
+            <div class="card red">
+                <span>10</span>
+                <span>&#9827</span>
+            </div>
+            <div class="card red">
+                <span>K</span>
+                <span>&#9830</span>
+            </div>
+            <div class="card black">
+                <span>8</span>
+                <span>&#9824</span>
+            </div>
+            <div class="card red">
+                <span>3</span>
+                <span>&#9829</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

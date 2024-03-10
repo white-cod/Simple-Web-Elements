@@ -1,0 +1,175 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(247, 245, 245);
+
+}
+
+textarea {
+    width: 400px;
+    height: 150px;
+}
+
+.untouched {
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.correct {
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.incorrect {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.lightgreen-btn {
+    background-color: rgb(56, 194, 56);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.green-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.green-btn-c {
+    background-color: rgb(56, 194, 56);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 100%
+}
+
+.red-btn {
+    background-color: rgb(156, 0, 0);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.crimson-btn {
+    background-color: rgb(228, 47, 116);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.crimson-btn-c {
+    background-color: rgb(228, 47, 116);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 100%
+}
+
+.inactive-btn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: not-allowed;
+    border-radius: 5px;
+}
+
+.green-btn:hover,
+.red-btn:hover {
+    opacity: 0.8;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    display: inline-block;
+    border: 1px solid rgb(32, 190, 0);
+    width: 40px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20%;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle-label:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: rgb(32, 190, 0);
+    border-radius: 20%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.toggle-checkbox:checked+.toggle-label:before {
+    left: calc(100% - 18px);
+}
+
+.toggle-checkbox-red {
+    display: none;
+}
+
+.toggle-label-red {
+    display: inline-block;
+    border: 1px solid rgb(228, 47, 116);
+    width: 40px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20%;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+}
+
+.toggle-label-red:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: rgb(228, 47, 116);
+    border-radius: 20%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.toggle-checkbox-red:checked+.toggle-label-red:before {
+    left: calc(100% - 18px);
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+}
+
+input[type="radio"]:checked {
+    background-color: #4CAF50;
+}

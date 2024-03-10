@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <style>
+        .slider {
+            width: 100%;
+            height: 15px;
+            margin-top: 50px;
+            background-color: lightgray;
+            position: relative;
+        }
+
+        .slider-thumb {
+            width: 20px;
+            height: 30px;
+            margin-top: -5px;
+            background-color: lightblue;
+            position: absolute;
+            top: -3px;
+            left: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider-thumb"></div>
+    </div>
+
+    <script>
+        var slider = document.querySelector('.slider');
+        var thumb = document.querySelector('.slider-thumb');
+        var isDragging = false;
+
+        document.addEventListener('mousedown', function (event) {
+            if (event.target === thumb) {
+                isDragging = true;
+            }
+        });
+
+        document.addEventListener('mouseup', function (event) {
+            isDragging = false;
+        });
+
+        document.addEventListener('mousemove', function (event) {
+            if (isDragging) {
+                var sliderWidth = slider.clientWidth;
+
+                var thumbPosition = event.clientX - slider.getBoundingClientRect().left;
+
+
+                if (thumbPosition < 0) {
+                    thumbPosition = 0;
+                } else if (thumbPosition > sliderWidth) {
+                    thumbPosition = sliderWidth;
+                }
+
+                thumb.style.left = thumbPosition + 'px';
+            }
+        });
+    </script>
+</body>
+
+</html>

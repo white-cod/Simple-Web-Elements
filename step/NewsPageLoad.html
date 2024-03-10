@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news-item {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Latest News</h1>
+    <ul id="news-list"></ul>
+
+    <script>
+        var newsArray = [
+            "Lorem ipsum dolor sit amet. Hic enim voluptatem non iure exercitationem qui rerum deleniti aut enim dolorem. Non nostrum dolores non galisum reiciendis aut dolorem quos non aliquid rerum ut saepe magnam. Sed reiciendis error et ipsa possimus sed omnis consequatur et obcaecati expedita eos quod itaque ut adipisci veritatis. Ut quia amet sit laudantium molestiae et nisi illo aut architecto maxime ut minima delectus ab facere voluptates aut error laudantium. Et vero dolorum quo fuga fuga sed illum fugit qui nisi nemo et similique minima est reiciendis dolor id sint illum. Et provident harum est reprehenderit inventore est quod porro sit nobis illum quo obcaecati suscipit. A tempore blanditiis id mollitia nemo sit dolorem cupiditate et commodi architecto in quibusdam autem non deserunt provident. Eum laborum ipsam ea totam expedita vel autem aliquid ut nobis ducimus id odit provident ut esse dicta id nulla rerum. Id distinctio incidunt ab optio odio et inventore iste qui libero esse. Et impedit quidem cum fugiat repellat et similique sint et ipsum provident rem voluptatem consequatur ab voluptas consequatur. Non fugiat dignissimos et similique temporibus non similique velit in sunt omnis eum galisum numquam. Est numquam molestiae aut laboriosam blanditiis aut quia enim! Eum reiciendis nulla eum odio deserunt ea minus deleniti sit numquam earum ab dolores ducimus. A quia laborum et sunt esse rem labore voluptates sed maxime sint aut dolores explicabo qui repellendus autem.",
+            "Lorem ipsum dolor sit amet. Est deleniti voluptatem sit placeat impedit eos omnis debitis aut obcaecati illo ut laborum totam. Vel omnis enim nam quasi consequatur cum dolorem veniam sed explicabo inventore. Non sint pariatur est nostrum odio est velit totam ea enim sequi. Et dolorem magnam sed velit enim eos maiores officia. Ut magni officiis ad cumque consequuntur est necessitatibus placeat ex deleniti eveniet! Et galisum enim sit omnis natus ab mollitia ratione in galisum tempore? Et assumenda tempora aut mollitia consequatur id incidunt consectetur quo rerum galisum aut nemo optio et tempore ipsa ut voluptate repudiandae? In blanditiis quia id dolores odit ut culpa dolor",
+            "Lorem ipsum dolor sit amet. A quas itaque est ratione similique sed officia deserunt nam nesciunt reprehenderit in expedita expedita ad nesciunt odit est tempore facilis. Ad quasi accusamus sit dignissimos maiores in sunt quidem et aperiam voluptas. Hic odit neque vel suscipit maxime ut aspernatur soluta in deleniti nihil non cupiditate neque 33 deserunt quos. Sit eligendi dolorem rem perferendis enim et ipsam veritatis qui nisi ullam sed autem obcaecati eos exercitationem eligendi. Est asperiores quibusdam At ullam nisi ea nemo harum. Ut consequatur debitis sed quia reiciendis ut suscipit dolore. Ut distinctio voluptas qui voluptatem sapiente sed asperiores error. Qui sunt maiores vel placeat possimus ab tempora eius et rerum tenetur.",
+            "Lorem ipsum dolor sit amet. Et aspernatur repellat ut ipsa odit et consequatur excepturi et architecto beatae eum veritatis enim. In debitis blanditiis non saepe officia est quia neque aut distinctio dolor vel alias nihil ea incidunt modi. Hic tenetur sint sit fugit internos cum veritatis galisum. Et dolor voluptates sit sint suscipit sed error delectus et velit ipsam ut quia sint sed dolorum recusandae. Qui nisi facere sit voluptatem ducimus ut sint placeat aut excepturi nobis et iste internos ut commodi unde. Sit beatae tempora in rerum molestiae qui labore incidunt sed quia totam et necessitatibus vitae qui deserunt provident aut blanditiis dignissimos? Ad veniam quis a aliquam dolore qui voluptas voluptatum. Sed totam ratione ut laboriosam quam est nesciunt consectetur et sequi omnis ex officiis impedit hic sapiente harum. Aut architecto praesentium et galisum officiis id consequatur deserunt sed repudiandae nobis et possimus autem. Aut Quis odio quo perferendis blanditiis non blanditiis explicabo qui dolorum earum qui tenetur voluptas. Vel natus nostrum a dolor magnam cum atque enim ex odio necessitatibus sit voluptates rerum.",
+            "Lorem ipsum dolor sit amet. Ad atque voluptatem et sapiente eius rem corrupti commodi ea repudiandae consectetur sed tenetur cupiditate nam possimus amet. At quasi ipsam sed ipsa blanditiis et officia ipsum. Sed fugiat beatae ut officiis eveniet et natus voluptate ut rerum porro et repudiandae quisquam aut consequatur aspernatur aut galisum tempore! 33 quam totam non asperiores repellendus et quia praesentium 33 ullam excepturi et fuga neque nam neque sequi. Sit iusto placeat ea debitis dolor ut saepe atque vel optio inventore! Et fugit quis ea nobis iusto et voluptatem quae At officiis eveniet et repellendus itaque. Et consequatur doloremque est maiores exercitationem eos voluptatem cumque aut quasi distinctio et voluptatem beatae qui quos dolorum. Ex minus alias et veniam odio ut velit ducimus ea optio repellat aut galisum velit id porro aliquid. Sit suscipit ducimus in odio exercitationem aut illum eaque aut quia omnis qui ducimus praesentium est quibusdam animi. Et neque blanditiis non voluptas ducimus quo necessitatibus voluptate. Sed exercitationem placeat et eveniet ullam eos rerum laudantium et corporis illum. Ea facilis sunt et quia ipsa sed omnis voluptas ut alias quia. Ut voluptatem dolorem sit omnis inventore cum nesciunt culpa ab asperiores omnis eos optio dignissimos ut numquam animi. Et quia laborum est dolore cupiditate aut repellendus consectetur aut quaerat unde.",
+            "Lorem ipsum dolor sit amet. Est harum aspernatur et consequatur exercitationem cum nihil reprehenderit quo quasi soluta sit rerum consequatur vel numquam omnis. Et iste quia et velit similique cum ipsam voluptate ab corrupti cumque qui tempora velit. Aut reprehenderit dolores sed voluptas similique aut beatae aliquid aut perferendis harum vel porro blanditiis aut consectetur tempora! Est exercitationem unde et facilis atque in voluptate excepturi non dolorem labore. In quos perspiciatis ut quis odio et galisum odit non omnis tempore in accusantium numquam et inventore rerum quo repellat tenetur. Est eligendi porro qui tempora quidem et mollitia accusantium qui laudantium nulla non aliquid molestiae eos quia praesentium id omnis magnam? Aut distinctio veritatis est amet reiciendis non voluptatem voluptas ut maxime magni. Aut molestiae inventore ut porro minima eos quam minus ut totam saepe ab molestiae nihil non odio exercitationem. Hic deserunt voluptatem id omnis galisum et odit delectus non galisum optio? Ea Quis voluptas et eveniet dolores At vero vitae sit consequatur voluptatibus eos omnis harum eum earum officia? Ut nesciunt natus qui minus voluptatem qui quia tempora sed tempore excepturi ut modi harum non nemo quidem.",
+            "Lorem ipsum dolor sit amet. Et quae illo et mollitia eligendi et delectus inventore. Non animi maiores et accusantium rerum sed laborum maiores ut enim nihil. Aut animi neque est omnis rerum sit fuga commodi et velit odio. Sed internos modi aut mollitia vero et excepturi nihil et quia maxime qui omnis nesciunt! Sed cumque voluptatem est nesciunt quis et esse amet qui cupiditate quas ut nihil iusto in temporibus dolores qui nihil quia. Sit fugiat dolores ut pariatur assumenda ut beatae porro. Est galisum totam aut galisum odit et praesentium voluptatem eum esse rerum et aspernatur beatae et praesentium tempore. A sequi asperiores non expedita voluptate et eligendi eius et quibusdam sapiente? Et laborum reprehenderit rem eius cumque non blanditiis fuga. Et accusantium sapiente et cupiditate consequatur et mollitia nobis 33 quos voluptates nam dignissimos tenetur. Et molestias cupiditate ut consequatur recusandae sed fuga rerum aut praesentium atque. Est blanditiis galisum ut quia totam ea enim illum aut temporibus dolorem aut iste aliquid! Cum voluptatem dolores et eius molestiae aut omnis culpa qui modi autem et excepturi eius. Est quisquam perferendis hic itaque culpa aut cumque omnis.",
+            "Lorem ipsum dolor sit amet. Vel voluptas incidunt eos dolore eligendi qui molestiae nobis ut enim minus sed minus alias. Ut unde dignissimos aut cumque quia ut voluptatem sint a quam nisi ut ducimus exercitationem ut quibusdam harum ut dolorem accusantium. Qui necessitatibus aliquid cum accusamus voluptates ut dolor tempore ut asperiores consequatur. Et quas quia est impedit voluptatum eos magni voluptatem est velit quidem vel harum laboriosam. Ut dolorum omnis quo quae voluptatem ut rerum voluptatem id error distinctio qui saepe nihil aut soluta corrupti. Et expedita ipsam non autem consequatur est amet natus non voluptas nobis et rerum omnis. Aut quas quos ut suscipit omnis in reprehenderit amet 33 tempora quod qui deserunt officiis a dolores omnis et odio illum. A quia galisum eos quam veritatis eos nisi ducimus in suscipit deleniti eos fuga exercitationem? Et deserunt voluptatem et laudantium facilis et consequatur eveniet aut dolorum optio et quos odio. Est numquam dolorem ut provident explicabo est reprehenderit quis. Aut accusantium doloribus a aliquid dolorem ad nulla vitae? Ut perferendis quaerat et dignissimos provident ad tempore dolor. Vel mollitia deleniti in corrupti neque rem itaque quidem. In sunt voluptatem est nesciunt Quis sed repellat cumque nam perspiciatis dolor non illum obcaecati hic optio voluptates a ullam dignissimos.",
+            "Lorem ipsum dolor sit amet. Sed neque maiores ea sapiente possimus est repudiandae ipsa qui cupiditate dolores ea consequatur quisquam et aliquid quidem et debitis minima? A esse dolor eos suscipit tempore 33 quibusdam consectetur. Est rerum quae aut vero aperiam et repudiandae aliquam qui eveniet exercitationem eos fuga praesentium et ducimus ipsum. 33 quia laboriosam hic odit provident qui provident minus est repudiandae voluptate aut eveniet incidunt. Sit esse natus ex consequatur autem ad necessitatibus voluptates in placeat recusandae. Qui ipsa totam et vero fugiat vel excepturi voluptatum. A optio minus eos beatae galisum ad ipsa quia. Qui cumque nihil aut dolor mollitia non tempore quia ut repudiandae ipsum ut cumque voluptas.",
+            "Lorem ipsum dolor sit amet. Non fugiat asperiores non tempora ullam et dolor debitis ab impedit eaque aut enim quod. Ut quidem esse et labore dolores aut provident dolore ea voluptatum voluptatem. In amet minus qui sapiente dicta quo velit iure. Id quasi voluptatem qui enim asperiores et cumque optio. Quo magni consequatur non eaque voluptatem sed odit fugit. Ea tenetur voluptatem non tempore repellendus sed necessitatibus dignissimos At consequatur eveniet. Est deleniti laboriosam et suscipit perspiciatis aut harum dolorem est ducimus earum et internos iusto aut blanditiis optio? Aut atque perferendis ad dolores quod ut impedit eveniet."
+        ];
+
+        function addNewsToPage() {
+            var newsList = document.getElementById("news-list");
+
+            for (var i = 0; i < newsArray.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.className = "news-item";
+                listItem.textContent = newsArray[i];
+                newsList.appendChild(listItem);
+            }
+        }
+
+        addNewsToPage();
+
+        function checkScrollEnd() {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+            if (scrollTop + clientHeight >= scrollHeight) {
+                addNewsToPage();
+            }
+        }
+
+        window.addEventListener("scroll", checkScrollEnd);
+    </script>
+</body>
+
+</html>

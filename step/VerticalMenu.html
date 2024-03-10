@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Menu</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .sidenav {
+            height: 100vh;
+            min-width: 50px;
+            width: 50px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #646262;
+            overflow-x: hidden;
+            transition: width 1s ease;
+        }
+
+        .sidenav:hover {
+            width: 250px;
+        }
+
+        .sidenav a {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            margin-left: -20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            display: block;
+            transition: background-color 0.5s;
+        }
+
+        .sidenav a:hover {
+            background-color: #444;
+        }
+
+        .sidenav .active {
+            background-color: #545458;
+            color: white;
+        }
+
+        .sidenav .container {
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            text-align: left;
+            line-height: 30px;
+            border-radius: 50%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        h {
+            font-size: 50px;
+            margin-left: 60px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-left: 60px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h>Lorem Ipsum</h>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus purus mi, tempus sit amet odio vitae, sagittis congue tellus. Pellentesque porta viverra leo, in lacinia purus molestie eu. Ut eget dignissim leo. Pellentesque ullamcorper tellus non dictum dignissim. Duis varius mi eu efficitur tristique. Duis condimentum consequat facilisis. Praesent efficitur sem eu vulputate elementum. Aenean ut purus eu sem dictum vulputate. Cras pulvinar urna nibh, nec tempus odio euismod et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec mattis velit, a vehicula ex. Mauris sed dui arcu. Morbi vitae arcu eu nunc iaculis euismod quis id purus.</p>
+    <p>Donec faucibus nibh sed erat tempor malesuada. Morbi blandit lorem nec facilisis finibus. In semper, diam sit amet pellentesque suscipit, nibh leo elementum sem, ut ultricies lacus quam ac enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus convallis nec mauris auctor aliquet. Duis eu finibus massa. In convallis dolor at dui dictum faucibus. Quisque lobortis, tortor nec ornare consectetur, dolor est interdum est, non semper arcu nunc id leo. Vestibulum imperdiet ornare est, in laoreet justo. Etiam laoreet blandit suscipit. Nulla elementum augue in feugiat ornare. Aenean non eros tempus, vehicula ipsum elementum, lobortis turpis.</p>
+    <p>Pellentesque vehicula facilisis erat eu egestas. Morbi mattis nibh tincidunt maximus molestie. Proin id magna in felis pretium pulvinar. Vestibulum sit amet augue ac libero rhoncus aliquam ut sed metus. Duis cursus in ipsum et volutpat. Cras nec maximus nibh. Ut eget nunc leo. Nam convallis, sapien tempor auctor sagittis, enim sapien suscipit arcu, ut imperdiet orci lorem at erat.</p>
+    <p>In hac habitasse platea dictumst. Curabitur massa risus, ultrices non facilisis id, fermentum id purus. Sed molestie justo lobortis auctor aliquam. Phasellus placerat lobortis ligula, in maximus nulla malesuada nec. Ut vitae porttitor dolor. Cras vitae viverra magna. Maecenas elementum est interdum est laoreet tempus. Curabitur fermentum blandit varius. Vivamus est diam, mollis ac justo id, gravida feugiat sapien. Morbi tortor ex, placerat non orci at, ultrices placerat sapien. Donec ac mattis orci. Aenean auctor fermentum urna, id sodales dui sollicitudin quis. In venenatis dui risus, vel sodales enim congue vitae. Vivamus feugiat tortor in dolor pulvinar, at venenatis ex lobortis. Aliquam euismod mi eu erat ultricies tincidunt.</p>
+    <p>Aliquam eu nisi a justo ultrices rhoncus. Fusce id fermentum tellus, eu sagittis nisl. Nunc rutrum ac eros et lobortis. Phasellus vel sagittis nisl. Vestibulum in iaculis orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque quis auctor enim. Morbi a elementum metus, ut euismod tortor. Mauris varius a erat eget convallis. Nullam sollicitudin id sem condimentum laoreet.</p>
+
+    <div class="sidenav">
+        <a href="#">
+            <div class="container">
+                <img src="/step/image/edit.png" alt="Edit Icon" class="icon">
+                <span>EDIT</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="container">
+                <img src="/step/image/favorites.png" alt="Edit Icon" class="icon">
+                <span>FAVORITES</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="container">
+                <img src="/step/image/history.png" alt="Edit Icon" class="icon">
+                <span>HISTORY</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="container">
+                <img src="/step/image/security.png" alt="Edit Icon" class="icon">
+                <span>SECURITY</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="container">
+                <img src="/step/image/settings.png" alt="Edit Icon" class="icon">
+                <span>SETTINGS</span>
+            </div>
+        </a>
+    </div>
+
+</body>
+
+</html>

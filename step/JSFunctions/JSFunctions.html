@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #results {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="results"></div>
+
+
+    <script src="JSFunctionsJS.js"></script>
+    <script>
+        // Функція 1
+        const input1 = "Hello World! 123";
+        const stats = stringStatistics(input1);
+        document.getElementById('results').innerHTML += `<p>Function 1: ${input1} => Letters: ${stats.letters}, Digits: ${stats.digits}, Others: ${stats.others}</p>`;
+
+        // Функція 2
+        const num = 35;
+        document.getElementById('results').innerHTML += `<p>Function 2: ${num} => ${twoDigitNumberToText(num)}</p>`;
+
+        // Функція 3
+        const input3 = "Hello123";
+        document.getElementById('results').innerHTML += `<p>Function 3: ${input3} => ${reverseCaseAndUnderscore(input3)}</p>`;
+
+        // Функція 4
+        const styleName = "font-size";
+        document.getElementById('results').innerHTML += `<p>Function 4: ${styleName} => ${cssToCamelCase(styleName)}</p>`;
+
+        // Функція 5
+        const phrase = "cascading style sheets";
+        document.getElementById('results').innerHTML += `<p>Function 5: ${phrase} => ${phraseToAbbreviation(phrase)}</p>`;
+
+        // Функція 6
+        const lines = ["line 1", "line 2", "line 3"];
+        document.getElementById('results').innerHTML += `<p>Function 6: ${concatenateLines(...lines)}</p>`;
+
+        // Функція 7
+        const expression = "2 + 3 * 4";
+        document.getElementById('results').innerHTML += `<p>Function 7: ${expression} = ${calculator(expression)}</p>`;
+
+        // Функція 8
+        const url = "https://itstep.org/ua/about";
+        const urlInfo = parseUrl(url);
+        document.getElementById('results').innerHTML += `<p>Function 8: ${url} => protocol: ${urlInfo.protocol}, domain: ${urlInfo.domain}, path: ${urlInfo.path}</p>`;
+
+        // Функція 9
+        const input9 = "10/08/2020";
+        const delimiter = "/";
+        const substrings = customSplit(input9, delimiter);
+        document.getElementById('results').innerHTML += `<p>Function 9: ${input9} => ${substrings.join(', ')}</p>`;
+
+        // Функція 10
+        const template = "Today is %1 %2.%3.%4";
+        const result = print(template, "Monday", 8, 10, 2020);
+        document.getElementById('results').innerHTML += `<p>Function 10: ${template} => ${result}</p>`;
+    </script>
+</body>
+
+</html>

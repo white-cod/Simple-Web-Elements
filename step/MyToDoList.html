@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .todo-list {
+            list-style: none;
+            list-style-type: none;
+            margin: 20px;
+            padding: 20px;
+            width: 500px;
+        }
+
+        .todo-list-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .todo-list-item:nth-child(odd) {
+            background-color: #e0eaff;
+        }
+
+        .todo-list-item:nth-child(even) {
+            background-color: #d0dfff;
+        }
+
+        .checked {
+            background-color: #926a4a18;
+        }
+
+        .item-icon {
+            margin-right: 8px;
+        }
+
+        .unchecked-icon:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('/step/image/icons/unchecked_16.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .checked .unchecked-icon:before {
+            visibility: visible;
+        }
+
+        .checked .checked-icon:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('/step/image/icons/checked_16.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .cross {
+            color: red;
+            margin-left: auto;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="font-weight: bold;">My To Do List</h1>
+
+    <ul class="todo-list">
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Hit the gym</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item checked" style="background-color: #926a4a18;">
+            <span class="item-icon checked-icon"></span>
+            <span>Pay bills</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Meet John</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Buy eggs</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item checked" style="background-color: #926a4a18;">
+            <span class="item-icon checked-icon"></span>
+            <span>Read a book</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Organize office</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Eat dinner</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Buy apples</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Meet George</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon"></span>
+            <span>Feed the cat</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item checked" style="background-color: #926a4a18;">
+            <span class="item-icon checked-icon"></span>
+            <span style="text-decoration: line-through">Write a letter</span>
+            <span class="cross">&#10060;</span>
+        </li>
+        <li class="todo-list-item">
+            <span class="item-icon unchecked-icon "></span>
+            <span>Run 1 km</span>
+            <span class="cross">&#10060;</span>
+        </li>
+    </ul>
+
+</body>
+
+</html>

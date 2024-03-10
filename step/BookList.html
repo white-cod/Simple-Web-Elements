@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        .selected {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Book List</h1>
+    <ul id="book-list">
+        <li>Book 1</li>
+        <li>Book 2</li>
+        <li>Book 3</li>
+        <li>Book 4</li>
+        <li>Book 5</li>
+    </ul>
+
+    <script>
+        const bookItems = document.querySelectorAll('#book-list li');
+        let lastClickedItem = null;
+        let selectedItems = [];
+
+        function handleItemClick(event) {
+            const clickedItem = event.target;
+            const isCtrlPressed = event.ctrlKey;
+            const isShiftPressed = event.shiftKey;
+
+            if (isCtrlPressed) {
+                if (selectedItems.includes(clickedItem)) {
+                    selectedItems = selectedItems.filter(item => item !== clickedItem);
+                } else {
+                    selectedItems.push(clickedItem);
+                }
+            } else if (isShiftPressed && lastClickedItem) {
+                const start = Array.from(bookItems).indexOf(lastClickedItem);
+                const end = Array.from(bookItems).indexOf(clickedItem);
+                const [min, max] = [Math.min(start, end), Math.max(start, end)];
+
+                selectedItems = Array.from(bookItems).slice(min, max + 1);
+            } else {
+                clearSelection();
+                selectedItems = [clickedItem];
+                lastClickedItem = clickedItem;
+            }
+
+            updateSelection();
+        }
+
+        function clearSelection() {
+            selectedItems.forEach(item => item.classList.remove('selected'));
+            selectedItems = [];
+        }
+
+        function updateSelection() {
+            bookItems.forEach(item => {
+                if (selectedItems.includes(item)) {
+                    item.classList.add('selected');
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
+
+        bookItems.forEach(item => {
+            item.addEventListener('click', handleItemClick);
+        });
+    </script>
+</body>
+
+</html>

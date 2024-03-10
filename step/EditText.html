@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <style>
+        #text-display {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        #text-editor {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text-display">Press Ctrl+E to start editing or Ctrl+S to stop editing.</div>
+
+    <script>
+        var textDiv = document.getElementById('text-display');
+        var textEditor = null;
+        var originalText = textDiv.innerText;
+
+        function showEditor() {
+
+            textEditor = document.createElement('textarea');
+            textEditor.id = 'text-editor';
+            textEditor.value = originalText;
+
+
+            textDiv.parentNode.replaceChild(textEditor, textDiv);
+
+            textEditor.focus();
+        }
+
+        function saveText() {
+
+            var modifiedText = textEditor.value;
+
+            textDiv = document.createElement('div');
+            textDiv.id = 'text-display';
+            textDiv.innerText = modifiedText;
+
+            textEditor.parentNode.replaceChild(textDiv, textEditor);
+
+            originalText = modifiedText;
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.key === 'e') {
+                event.preventDefault();
+
+                showEditor();
+            } else if (event.ctrlKey && event.key === 's') {
+                event.preventDefault();
+                saveText();
+            }
+        });
+    </script>
+</body>
+
+</html>

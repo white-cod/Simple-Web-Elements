@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            margin-left: 750px;
+            width: 400px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        td {
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calendar Generator</h1>
+        <form id="calendarForm">
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" min="1" max="12" required>
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" min="1" max="3000" required>
+            <button type="submit">Generate Calendar</button>
+        </form>
+        <div id="calendar"></div>
+    </div>
+
+    <script>
+        document.getElementById('calendarForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var month = document.getElementById('month').value;
+            var year = document.getElementById('year').value;
+            var calendar = generateCalendar(month, year);
+            document.getElementById('calendar').innerHTML = calendar;
+        });
+
+        function generateCalendar(month, year) {
+            var firstDay = new Date(year, month - 1, 1).getDay();
+            var daysInMonth = new Date(year, month, 0).getDate();
+            var calendar = '<table><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr>';
+            for (var i = 0; i < firstDay; i++) {
+                calendar += '<td></td>';
+            }
+            for (var i = 1; i <= daysInMonth; i++) {
+                calendar += '<td>' + i + '</td>';
+                if ((i + firstDay) % 7 === 0) {
+                    calendar += '</tr><tr>';
+                }
+            }
+            for (var i = (firstDay + daysInMonth) % 7; i < 7; i++) {
+                calendar += '<td></td>';
+            }
+            calendar += '</tr></table>';
+            return calendar;
+        }
+    </script>
+</body>
+
+</html>

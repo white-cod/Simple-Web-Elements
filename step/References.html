@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References</title>
+    <style>
+        .underline {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .no-underline {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>References</h1>
+    <ul id="references">
+        <li><a href="http://www.google.com">http://www.google.com</a></li>
+        <li><a href="https://itstep.org">https://itstep.org</a></li>
+        <li><a href="https://mystat.itstep.org">https://mystat.itstep.org</a></li>
+        <li><a href="ssh://index.html">index.html</a></li>
+        <li><a href="ftp://link">ftp://link</a></li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+            var links = document.querySelectorAll('#references a');
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href.startsWith('http')) {
+                    links[i].classList.add('underline');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
