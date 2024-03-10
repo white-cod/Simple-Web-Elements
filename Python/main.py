@@ -27,4 +27,4 @@ async def play(ctx: Context, *, youtube_link: str):
     else:
         await ctx.send('You must be in a voice channel to use this command.')
 
-bot.run("MTA5OTM1OTkwMzE3NDM2OTM4NA.G7_C8f.z_a4CJAKr4bAMtxwWS48RIDoY2Va8CxmveMvVc")
+bot.run("---")
