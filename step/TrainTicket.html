@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(250, 250, 228);
+            color: #333;
+        }
+
+        .seat {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .booked {
+            background-color: #ffcccc;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Train Ticket Booking</h1>
+
+    <label for="direction">Select Direction:</label>
+    <select id="direction">
+        <option value="north">North</option>
+        <option value="south">South</option>
+    </select>
+
+    <label for="date">Select Date:</label>
+    <input type="date" id="date">
+
+    <button onclick="showAvailableSeats()">Show Available Seats</button>
+
+    <div id="seatsContainer"></div>
+
+    <button onclick="bookSelectedSeats()">Book Selected Seats</button>
+
+    <div id="bookedTickets">
+        <h2>Booked Tickets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Seat</th>
+                    <th>Direction</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="bookedList"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const availableSeats = ['A1', 'A2', 'A3', 'A4', 'B1', 'B2', 'B3', 'B4'];
+        let bookedSeats = [];
+
+        function showAvailableSeats() {
+            const direction = document.getElementById('direction').value;
+            const date = document.getElementById('date').value;
+
+            const seatsContainer = document.getElementById('seatsContainer');
+            seatsContainer.innerHTML = '';
+
+            availableSeats.forEach(seat => {
+                const isBooked = bookedSeats.includes(seat);
+                const seatElement = document.createElement('div');
+                seatElement.classList.add('seat');
+                if (isBooked) {
+                    seatElement.classList.add('booked');
+                    seatElement.textContent = 'X';
+                } else {
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = seat;
+                    seatElement.appendChild(checkbox);
+                    seatElement.appendChild(document.createTextNode(seat));
+                }
+                seatsContainer.appendChild(seatElement);
+            });
+        }
+
+        function bookSelectedSeats() {
+            const checkboxes = document.querySelectorAll('#seatsContainer input[type="checkbox"]:checked');
+            const direction = document.getElementById('direction').value;
+            const date = document.getElementById('date').value;
+
+            checkboxes.forEach(checkbox => {
+                const seat = checkbox.value;
+                bookedSeats.push(seat);
+                checkbox.parentNode.classList.add('booked');
+                checkbox.disabled = true;
+                const bookedList = document.getElementById('bookedList');
+                const row = bookedList.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                cell1.textContent = seat;
+                cell2.textContent = direction;
+                cell3.textContent = date;
+            });
+        }
+    </script>
+</body>
+
+</html>

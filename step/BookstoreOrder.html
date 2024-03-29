@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Order Form</title>
+    <style>
+        body {
+            background-color: rgb(250, 250, 228);
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .book {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid rgb(0, 0, 0);
+            height: 328px;
+        }
+
+        .book img {
+            width: 150px;
+            height: 200px;
+            margin-top: 10px;
+        }
+
+        .book-title {
+            font-weight: bold;
+        }
+
+        .buy-button {
+            margin-top: 5px;
+            padding: 5px 75px;
+            background-color: #acacac;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #acacac;
+        }
+
+        .registration-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: #f2f2f2;
+            margin-top: 10px;
+        }
+
+        .registration-container h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .registration-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .registration-container input[type="text"],
+        .registration-container input[type="date"],
+        .registration-container input[type="number"],
+        .registration-container textarea {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .registration-container textarea {
+            height: 80px;
+        }
+
+        .registration-container button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #acacac;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .registration-container button[type="submit"]:hover {
+            background-color: #acacac;
+        }
+
+        .thank-you-message {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="books-container">
+        <div class="book" id="book1">
+            <img src="/step/image/The_Lord_of_the_Rings.jpg" alt="Book 1">
+            <p class="book-title">The Lord of the Rings</p>
+            <p class="book-author">John Ronald Tolkien</p>
+            <button class="buy-button">Buy</button>
+        </div>
+
+        <div class="book" id="book2">
+            <img src="/step/image/TheHobbit.jpg" alt="Book 2">
+            <p class="book-title">The Hobbit</p>
+            <p class="book-author">John Ronald Tolkien</p>
+            <button class="buy-button">Buy</button>
+        </div>
+
+        <div class="book" id="book3">
+            <img src="/step/image/1984.jpg" alt="Book 3">
+            <p class="book-title">1984</p>
+            <p class="book-author">George Orwell</p>
+            <button class="buy-button">Buy</button>
+        </div>
+    </div>
+
+    <div class="registration-container" id="order-form">
+        <h2>Order Details</h2>
+
+        <label for="quantity-input">Number of Copies:</label>
+        <input type="number" id="quantity-input" name="quantity" min="1" value="1">
+
+        <h2>Personal Information</h2>
+
+        <label for="name-input">Name:</label>
+        <input type="text" id="name-input" name="name">
+
+        <label for="date-input">Delivery Date:</label>
+        <input type="date" id="date-input" name="delivery-date">
+
+        <label for="address-input">Delivery Address:</label>
+        <input type="text" id="address-input" name="address">
+
+        <label for="comment-input">Comment:</label>
+        <textarea id="comment-input" name="comment"></textarea>
+
+        <button type="submit">Place Order</button>
+    </div>
+
+    <div class="thank-you-message" id="thank-you-message">Thank you for your purchase!</div>
+
+    <script>
+        function checkFields() {
+            var nameInput = document.getElementById('name-input').value.trim();
+            var dateInput = document.getElementById('date-input').value.trim();
+            var addressInput = document.getElementById('address-input').value.trim();
+    
+            if (nameInput !== '' && dateInput !== '' && addressInput !== '') {
+                buyButtons.forEach(function(button) {
+                    button.disabled = false;
+                });
+            } else {
+                buyButtons.forEach(function(button) {
+                    button.disabled = true;
+                });
+            }
+        }
+    
+        var inputFields = document.querySelectorAll('.registration-container input, .registration-container textarea');
+        inputFields.forEach(function(input) {
+            input.addEventListener('input', checkFields);
+        });
+    
+        var buyButtons = document.querySelectorAll('.buy-button');
+        buyButtons.forEach(function(button) {
+            button.disabled = true;
+        });
+    
+        function handleBuyButtonClick(event) {
+            var bookTitle = event.target.parentElement.querySelector('.book-title').innerText;
+            var deliveryAddress = document.getElementById('address-input').value.trim();
+    
+            var thankYouMessage = document.getElementById('thank-you-message');
+            thankYouMessage.innerHTML = "Thank you for purchasing <strong>" + bookTitle + "</strong>. It will be delivered to:<br>" + deliveryAddress;
+            thankYouMessage.style.display = 'block';
+        }
+    
+        buyButtons.forEach(function(button) {
+            button.addEventListener('click', handleBuyButtonClick);
+        });
+    </script>
+    
+
+</body>
+
+</html>

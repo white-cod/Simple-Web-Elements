@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylized Text</title>
+    <style>
+        body {
+            background-color: rgb(250, 250, 228);
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .result-textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: normal;
+            text-decoration: none;
+            text-align: left;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="textForm">
+        <div class="form-container">
+
+            <input type="checkbox" id="bold" name="style" value="bold">
+            <label for="bold">Bold</label><br>
+            <input type="checkbox" id="underline" name="style" value="underline">
+            <label for="underline">Underline</label><br>
+            <input type="checkbox" id="italic" name="style" value="italic">
+            <label for="italic">Italic</label><br>
+            <input type="radio" id="left" name="align" value="left" checked>
+            <label for="left">Left</label><br>
+            <input type="radio" id="center" name="align" value="center">
+            <label for="center">Center</label><br>
+            <input type="radio" id="right" name="align" value="right">
+            <label for="right">Right</label><br>
+            <input type="radio" id="justify" name="align" value="justify">
+            <label for="justify">Justify</label><br>
+
+            <input type="text" id="text" name="text"><br>
+            <input type="submit" value="Submit">
+            <textarea id="output" class="result-textarea" readonly></textarea>
+        </div>
+    </form>
+
+
+    <script>
+        document.getElementById('textForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var text = document.getElementById('text').value;
+            var styles = [];
+            var checkboxes = document.querySelectorAll('input[name="style"]:checked');
+
+            checkboxes.forEach((checkbox) => {
+                styles.push(checkbox.value);
+            });
+
+            var align = document.querySelector('input[name="align"]:checked').value;
+
+            var output = document.getElementById('output');
+            output.style.textAlign = align;
+            output.style.fontWeight = styles.includes('bold') ? 'bold' : 'normal';
+            output.style.textDecoration = styles.includes('underline') ? 'underline' : 'none';
+            output.style.fontStyle = styles.includes('italic') ? 'italic' : 'normal';
+            output.value = text;
+        });
+    </script>
+</body>
+
+</html>

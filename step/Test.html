@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            background-color: rgb(250, 250, 228);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Тест</h1>
+    <form id="testForm">
+        <div class="question">
+            <p>Запитання 1: Яка столиця Франції?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="paris"> Париж</label><br>
+                <label><input type="radio" name="q1" value="london"> Лондон</label><br>
+                <label><input type="radio" name="q1" value="berlin"> Берлін</label><br>
+                <label><input type="radio" name="q1" value="rome"> Рим</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Запитання 2: Хто намалював Мону Лізу?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="van_gogh"> Ван Гог</label><br>
+                <label><input type="radio" name="q2" value="picasso"> Пікассо</label><br>
+                <label><input type="radio" name="q2" value="da_vinci"> Леонардо да Вінчі</label><br>
+                <label><input type="radio" name="q2" value="monet"> Моне</label><br>
+            </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Підтвердити</button>
+    </form>
+
+    <div id="result" style="display: none;">
+        <h2>Результат</h2>
+        <p id="score"></p>
+    </div>
+
+    <script>
+        function checkAnswers() {
+
+            var form = document.getElementById("testForm");
+
+            var score = 0;
+
+            if (form.q1.value === "paris") {
+                score++;
+            }
+            if (form.q2.value === "da_vinci") {
+                score++;
+            }
+
+            var resultDiv = document.getElementById("result");
+            var scoreParagraph = document.getElementById("score");
+            scoreParagraph.textContent = "Кількість правильних відповідей: " + score;
+            resultDiv.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .search-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .search-bar input[type="text"],
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-bar input[type="text"] {
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            background-color: rgb(0, 187, 187);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+
+        h1 {
+            margin-left: 200px;
+            color: rgb(0, 187, 187);
+        }
+
+        h2 {
+            color: rgb(0, 187, 187);
+        }
+
+        .weather-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 750px;
+            margin-top: 5%;
+            margin-left: 30%;
+        }
+
+        #weather-info {
+            display: flex;
+        }
+
+        #weather-icon-container {
+            margin-right: 50px;
+        }
+
+        #weather-icon {
+            width: 300px;
+            height: auto;
+            margin-right: 200px;
+        }
+
+        .weather-container-hourly {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 1600px;
+            margin-left: 10%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        #current-weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #weather-info,
+        #hourly-weather {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .weather-block {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .hourly-weather-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Current Weather</h1>
+    <div class="search-bar">
+        <input type="text" id="city-input" placeholder="Enter city name">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="weather-container">
+        <div id="current-weather-info" style="display: none;">
+            <div id="weather-info">
+                <div id="weather-icon-container">
+                    <img id="weather-icon" alt="Weather Icon">
+                </div>
+                <div id="weather-details">
+                    <p><strong>City:</strong> <span id="city"></span></p>
+                    <p><strong>Date:</strong> <span id="date"></span></p>
+                    <p><strong>Weather:</strong> <span id="weather-description"></span></p>
+                    <p><strong>Temperature:</strong> <span id="temperature"></span>&deg;C</p>
+                    <p><strong>Min Temperature:</strong> <span id="min-temperature"></span>&deg;C</p>
+                    <p><strong>Max Temperature:</strong> <span id="max-temperature"></span>&deg;C</p>
+                    <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> m/s</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weather-container-hourly">
+        <h2>Hourly Weather</h2>
+        <div id="hourly-weather"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const apiKey = "325ff6b0809d895d440fb4a7facb1cb7";
+            const city = document.getElementById("city-input").value;
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.cod !== "200") {
+                    alert(data.message);
+                    return;
+                }
+
+                const currentWeatherInfo = document.getElementById("current-weather-info");
+                currentWeatherInfo.style.display = "block";
+
+                document.getElementById("city").textContent = data.city.name;
+                const currentDate = new Date(data.list[0].dt * 1000);
+                document.getElementById("date").textContent = currentDate.toDateString();
+                document.getElementById("weather-description").textContent = data.list[0].weather[0].description;
+                document.getElementById("weather-icon").src = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`;
+                document.getElementById("temperature").textContent = data.list[0].main.temp;
+                document.getElementById("min-temperature").textContent = data.list[0].main.temp_min;
+                document.getElementById("max-temperature").textContent = data.list[0].main.temp_max;
+                document.getElementById("wind-speed").textContent = data.list[0].wind.speed;
+
+                const hourlyWeatherContainer = document.getElementById("hourly-weather");
+                hourlyWeatherContainer.innerHTML = "";
+                const currentTime = new Date().getTime();
+                const next24Hours = currentTime + (24 * 60 * 60 * 1000);
+                for (let i = 0; i < data.list.length; i++) {
+                    const hourlyData = data.list[i];
+                    const forecastTime = hourlyData.dt * 1000;
+                    if (forecastTime <= next24Hours) {
+                        const hourlyItem = document.createElement("div");
+                        hourlyItem.classList.add("hourly-weather-item");
+                        hourlyItem.innerHTML = `
+                            <p><strong>Time:</strong> ${new Date(forecastTime).toLocaleTimeString()}</p>
+                            <img src="http://openweathermap.org/img/wn/${hourlyData.weather[0].icon}@2x.png" alt="Weather Icon">
+                            <p><strong>Weather:</strong> ${hourlyData.weather[0].description}</p>
+                            <p><strong>Temperature:</strong> ${hourlyData.main.temp}&deg;C</p>
+                            <p><strong>Wind Speed:</strong> ${hourlyData.wind.speed} m/s</p>
+                        `;
+                        hourlyWeatherContainer.appendChild(hourlyItem);
+                    }
+                }
+            } catch (error) {
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

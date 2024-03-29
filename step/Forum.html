@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <style>
+        body {
+            background-color: rgb(250, 250, 228);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .time {
+            color: #888;
+            font-size: 0.8em;
+            margin-bottom: 5px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #9e9e9e;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Posts</h2>
+    <ul id="post-list">
+    </ul>
+
+    <h2>Add New Post</h2>
+    <form id="post-form">
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <input type="submit" value="Add Post">
+    </form>
+
+    <script>
+        function addPost(event) {
+            event.preventDefault();
+
+            const authorInput = document.getElementById('author');
+            const messageInput = document.getElementById('message');
+            const author = authorInput.value;
+            const message = messageInput.value;
+
+            const postElement = document.createElement('li');
+            const timestamp = new Date().toLocaleString();
+            postElement.innerHTML = `<div class="time">${timestamp}</div><div class="author">${author}</div><div>${message}</div>`;
+
+            const postList = document.getElementById('post-list');
+            postList.appendChild(postElement);
+
+            authorInput.value = '';
+            messageInput.value = '';
+        }
+
+        const form = document.getElementById('post-form');
+        form.addEventListener('submit', addPost);
+    </script>
+</body>
+
+</html>

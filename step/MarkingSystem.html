@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendee Marking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(250, 250, 228);
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #acacac;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #acacac;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Mark Attendees</h2>
+        <label for="groupSelect">Select Group:</label>
+        <select id="groupSelect">
+            <option value="group1">Group 1</option>
+            <option value="group2">Group 2</option>
+        </select>
+        <label for="pairSelect">Select Pair:</label>
+        <select id="pairSelect">
+            <option value="pair1">Pair 1</option>
+            <option value="pair2">Pair 2</option>
+        </select>
+        <label for="topicInput">Topic of Lesson:</label>
+        <input type="text" id="topicInput">
+        <label for="attendeeInput">Mark Attendees (comma-separated):</label>
+        <input type="text" id="attendeeInput">
+        <button onclick="markAttendees()">Mark Attendees</button>
+
+        <h2>View Marked Pairs</h2>
+        <button onclick="viewMarkedPairs()">View Marked Pairs</button>
+        <ul id="markedPairsList"></ul>
+    </div>
+
+    <script>
+        const markedPairs = [];
+
+        function markAttendees() {
+            const group = document.getElementById("groupSelect").value;
+            const pair = document.getElementById("pairSelect").value;
+            const topic = document.getElementById("topicInput").value;
+            const attendees = document.getElementById("attendeeInput").value.split(",").map(item => item.trim());
+
+            markedPairs.push({ group, pair, topic, attendees });
+
+            document.getElementById("topicInput").value = "";
+            document.getElementById("attendeeInput").value = "";
+
+            alert("Attendees marked successfully!");
+        }
+
+        function viewMarkedPairs() {
+            const markedPairsList = document.getElementById("markedPairsList");
+            markedPairsList.innerHTML = "";
+
+            markedPairs.forEach(pair => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `Group: ${pair.group}, Pair: ${pair.pair}, Topic: ${pair.topic}, Attendees: ${pair.attendees.join(", ")}`;
+                markedPairsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+
+</html>
